@@ -1,0 +1,45 @@
+{
+  "name": "preacttemplate",
+  "version": "0.1.0",
+  "description": "Preact template with state management",
+  "author": "Tommi Kivelä",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development parcel ./src/index.html",
+    "test": "npm-run-all -s --silent lint unittest",
+    "lint": "npm-run-all -s prettier standard",
+    "unittest": "jest --no-cache",
+    "createbuild": "cross-env NODE_ENV=production parcel build ./src/index.html --detailed-report",
+    "standard": "standard --verbose \"src/**/*.js\" | snazzy",
+    "prettier": "prettier-standard 'src/**/*.js'"
+  },
+  "dependencies": {
+    "@rematch/core": "1.0.0-alpha.2",
+    "axios": "^0.18.0",
+    "emotion": "^9.1.2",
+    "immer": "^1.2.1",
+    "preact": "^8.2.7",
+    "preact-redux": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.4",
+    "jest": "^22.4.3",
+    "npm-run-all": "^4.1.2",
+    "parcel-bundler": "^1.7.1",
+    "prettier-standard": "^8.0.1",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "env": [
+      "jest"
+    ]
+  }
+}
